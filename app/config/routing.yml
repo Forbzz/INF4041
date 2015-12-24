@@ -22,8 +22,8 @@ EsieaBlogBundle_contact:
         _method:  GET|POST
 
 EsieaBlogBundle_blog_show:
-    pattern:  /blog/{id}
-    defaults: { _controller: EsieaBlogBundle:Blog:show }
+    pattern:  /blog/{id}/{slug}
+    defaults: { _controller: EsieaBlogBundle:Blog:show,slug: default_slug }
     requirements:
         _method:  GET
         id: \d+
@@ -34,3 +34,4 @@ EsieaBlogBundle_comment_create:
     requirements:
         _method:  POST
         blog_id: \d+
+

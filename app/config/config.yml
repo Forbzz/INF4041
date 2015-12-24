@@ -8,6 +8,8 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    #Esiea max latest comments
+    esiea_blog.comments.latest_comment_limit: 10
 
 framework:
     #esi:             ~

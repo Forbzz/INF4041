@@ -26,7 +26,7 @@ class CommentController extends Controller
         ));
     }
 
-    public function createAction($blog_id)
+   public function createAction($blog_id)
     {
         $blog = $this->getBlog($blog_id);
 
@@ -34,18 +34,22 @@ class CommentController extends Controller
         $comment->setBlog($blog);
         $request = $this->getRequest();
         $form    = $this->createForm(new CommentType(), $comment);
-        $form->bind($request);
+        $form->bindRequest($request);
 
         if ($form->isValid()) {
+
             $em = $this->getDoctrine()
                        ->getEntityManager();
             $em->persist($comment);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('EsieaBlogBundle_blog_show', array(
-                'id' => $comment->getBlog()->getId())) .
-                '#comment-' . $comment->getId()
-            );
+            return $this->redirect
+              ($this->generateUrl('EsieaBlogBundle_blog_show',
+                                  array(
+                                        'id'    => $comment->getBlog()->getId(),
+                                        'slug'  => $comment->getBlog()->getSlug())) .
+               '#comment-' . $comment->getId()
+               );
         }
 
         return $this->render('EsieaBlogBundle:Comment:create.html.twig', array(

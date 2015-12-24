@@ -83,7 +83,31 @@ class PageController extends Controller
   }
 
 
+public function sidebarAction()
+  {
+    $em = $this->getDoctrine()
+      ->getEntityManager();
 
+    $tags = $em->getRepository('EsieaBlogBundle:Blog')
+      ->getTags();
 
+    $tagWeights = $em->getRepository('EsieaBlogBundle:Blog')
+      ->getTagWeights($tags);
+
+    $commentLimit   = $this->container
+                           ->getParameter('esiea_blog.comments.latest_comment_limit');
+    $latestComments = $em->getRepository('EsieaBlogBundle:Comment')
+                         ->getLatestComments($commentLimit);
+
+    return $this->render('EsieaBlogBundle:Page:sidebar.html.twig',
+                         array(
+                               'latestComments'    => $latestComments,
+                               'tags' => $tagWeights
+                               ));
+  }
 
 }
+
+
+
+
