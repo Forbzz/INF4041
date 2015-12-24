@@ -1,0 +1,4 @@
+services:
+#    esiea_blog.example:
+#        class: Esiea\BlogBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

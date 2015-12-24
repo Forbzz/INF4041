@@ -1,0 +1,29 @@
+{% extends 'EsieaBlogBundle::layout.html.twig' %}
+
+{% block title %}Contact{% endblock%}
+
+{% block body %}
+<header>
+  <h1>Contactez nous</h1>
+</header>
+
+{% for flashMessage in app.session.flashbag.get('formulaire') %}
+<div class="formulaire">
+ Merci de nous avoir contacté 
+</div>
+{% endfor %}
+
+
+<form action="{{ path('EsieaBlogBundle_contact') }}" method="post" {{ form_enctype(form) }} class="formulaire">
+  {{ form_errors(form) }}
+
+  {{ form_row(form.name) }}
+  {{ form_row(form.email) }}
+  {{ form_row(form.subject) }}
+  {{ form_row(form.body) }}
+
+  {{ form_rest(form) }}
+
+  <input type="submit" value="Submit" />
+</form>
+{% endblock %}

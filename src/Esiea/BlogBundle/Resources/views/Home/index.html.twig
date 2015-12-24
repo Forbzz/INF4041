@@ -1,0 +1,13 @@
+
+{% extends 'EsieaBlogBundle::template.html.twig' %}
+
+     {% block stylesheets %}  
+     {{parent()}}
+     <link href="{{ asset('css/home.css') }}" rel="stylesheet" />  {% endblock %}
+  
+{% block title %}{{parent()}}{% endblock %}
+   
+        {% block body %}
+
+           <h1>Bienvenue sur mon blog de merde.</h1>{% endblock %}
+        {% block javascripts %}{% endblock %}

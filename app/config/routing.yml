@@ -1,0 +1,36 @@
+EsieaBlogBundle:
+    resource: "@EsieaBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+EsieaBlogBundle_homepage:
+    pattern:  /blog
+    defaults: { _controller: EsieaBlogBundle:Page:index }
+    requirements:
+        _method:  get
+
+EsieaBlogBundle_about:
+    pattern:  /about
+    defaults: { _controller: EsieaBlogBundle:Page:about }
+    requirements:
+        _method:  GET
+
+EsieaBlogBundle_contact:
+    pattern:  /contact
+    defaults: { _controller: EsieaBlogBundle:Page:contact }
+    requirements:
+        _method:  GET|POST
+
+EsieaBlogBundle_blog_show:
+    pattern:  /blog/{id}
+    defaults: { _controller: EsieaBlogBundle:Blog:show }
+    requirements:
+        _method:  GET
+        id: \d+
+
+EsieaBlogBundle_comment_create:
+    pattern:  /comment/{blog_id}
+    defaults: { _controller: EsieaBlogBundle:Comment:create }
+    requirements:
+        _method:  POST
+        blog_id: \d+
