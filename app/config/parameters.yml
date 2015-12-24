@@ -1,0 +1,15 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: mysql.hostinger.fr
+    database_port: null
+    database_name: u940492463_blog
+    database_user: u940492463_user
+    database_password: macreza94
+    mailer_transport: gmail
+    mailer_host: smtp.gmail.com
+    mailer_user: nicolas.suor@gmail.com
+    mailer_password: htkc1T99A4
+    secret: 382f61754ce5bd2c819cfa4fae76db8380f2cfc6
+
+
+
