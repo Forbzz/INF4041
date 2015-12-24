@@ -2,9 +2,9 @@
 parameters:
     database_host: mysql.hostinger.fr
     database_port: null
-    database_name: u940492463_blog
-    database_user: u940492463_user
-    database_password: macreza94
+    database_name: u883902446_artic
+    database_user: u883902446_nico
+    database_password: htkc1T99A4
     mailer_transport: gmail
     mailer_host: smtp.gmail.com
     mailer_user: nicolas.suor@gmail.com
