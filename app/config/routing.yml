@@ -4,7 +4,7 @@ EsieaBlogBundle:
 
 
 EsieaBlogBundle_homepage:
-    pattern:  /blog
+    pattern:  /
     defaults: { _controller: EsieaBlogBundle:Page:index }
     requirements:
         _method:  get
@@ -22,7 +22,7 @@ EsieaBlogBundle_contact:
         _method:  GET|POST
 
 EsieaBlogBundle_blog_show:
-    pattern:  /blog/{id}/{slug}
+    pattern:  /{id}/{slug}
     defaults: { _controller: EsieaBlogBundle:Blog:show,slug: default_slug }
     requirements:
         _method:  GET
